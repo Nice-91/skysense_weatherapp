@@ -1,92 +1,155 @@
- body{
-    background-image: url(images/background.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
- }
+body {
+  background-image: url(images/background.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
- .container{text-align: center;
-    background-color: rgba(235, 225, 225, 0.2); ;
-    width: 500px;
-    height: 500px;
-    margin-left: 380px;
-    border-radius: 50px;
-    margin-top: 100px;
- }
- h1{
-    color: white;
-    padding-top: 50px;
-    font-family: fantasy;
-    font-weight: bold;
- }
- h1:hover{color: rgb(254, 225, 225);}
+/* Centered container with flexible width */
+.container {
+  text-align: center;
+  background-color: rgba(235, 225, 225, 0.2);
+  width: 90%;
+  max-width: 500px;
+  height: 400px;
+  padding: 50px 20px;
+  margin: 100px auto 0 auto;
+  border-radius: 50px;
+}
 
- input {
-    padding: 10px;
-    width: 60%;
-    border-radius: 20px;
-    border: none;
-    margin-top: 10px;
-    background-color: white;
+/* Heading */
+h1 {
+  color: white;
+  font-family: fantasy;
+  font-weight: bold;
+  margin-bottom: 30px;
+  transition: color 0.3s;
+}
+h1:hover {
+  color: rgb(254, 225, 225);
+}
+
+/* Input field */
+input {
+  padding: 10px;
+  width: 80%;
+  max-width: 300px;
+  border-radius: 20px;
+  border: none;
+  margin-top: 10px;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+/* Button */
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: rgb(152, 233, 152);
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+button:hover {
+  background-color: green;
+}
+
+/* Weather box */
+.weather-box {
+  margin-top: 20px;
+  color: white;
+}
+
+/* Weather icon */
+.weather-box img {
+  width: 50px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.weather-box img:hover {
+  transform: scale(1.2);
+}
+
+/* Temperature */
+.weather-box .temp {
+  font-size: 30px;
+  margin: 10px 0;
+  color: rgb(246, 213, 27);
+  transition: color 0.3s;
+}
+.weather-box .temp:hover {
+  color: white;
+}
+
+/* Description */
+.weather-box .desc {
+  font-style: italic;
+  margin-bottom: 15px;
+  color: white;
+  transition: color 0.3s;
+}
+.weather-box .desc:hover {
+  color: rgb(246, 213, 27);
+}
+
+/* Weather details (flex layout) */
+.weather-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+  color: white;
+  transition: color 0.3s;
+}
+.weather-details:hover {
+  color: rgb(246, 213, 27);
+}
+
+.weather-details i {
+  margin-right: 6px;
+  color: rgb(246, 213, 27);
+}
+
+/* Responsive media queries */
+@media screen and (max-width: 768px) {
+  .container {
+      margin-top: 50px;
+      padding: 40px 15px;
   }
-  
-  button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    background: rgb(152, 233, 152);
-    color: black;
-    cursor: pointer;
-    font-weight: bold;
+  h1 {
+      font-size: 28px;
   }
-  button:hover{
-    background-color: green;
-  }
-  
-  .weather-box {
-    margin-top: 20px;
-    color: white;
-  }
-  
-  .weather-box img {
-    width: 50px;
-    border-radius: 50px;
-    cursor: pointer;
-  }
-  .weather-box img:hover {
-    transform: scale(1.2);}
-  
   .weather-box .temp {
-    font-size: 30px;
-    margin: 10px 0;
-    color: rgb(246, 213, 27)
+      font-size: 25px;
   }
-
-  .weather-box .temp:hover{color: white;}
-  
-  .weather-box .desc {
-    font-style: italic;
-    margin-bottom: 15px;
-    color: white;
-  }
-  .weather-box .desc:hover{color: rgb(246, 213, 27);}
-  
   .weather-details {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 20px;
-    color: white;
+      flex-direction: column;
+      align-items: center;
   }
+}
 
- .weather-details:hover{color: rgb(246, 213, 27);}
-
-  .weather-details i {
-    margin-right: 6px;
-    color: rgb(246, 213, 27)
+@media screen and (max-width: 480px) {
+  h1 {
+      font-size: 24px;
   }
- 
-  
- 
+  input {
+      width: 90%;
+  }
+  button {
+      width: 80%;
+      padding: 10px 15px;
+  }
+  .weather-box .temp {
+      font-size: 22px;
+  }
+  .weather-box img {
+      width: 40px;
+  }
+}
